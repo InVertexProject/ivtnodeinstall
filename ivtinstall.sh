@@ -4,6 +4,7 @@ echo "Do you want to install all needed dependencies (no if you did it before)? 
 read DOSETUP
 
 if [[ $DOSETUP =~ "y" ]] ; then
+  sudo add-apt-repository  -y  ppa:bitcoin/bitcoin
   sudo apt-get update
   sudo apt-get -y upgrade
   sudo apt-get -y dist-upgrade
@@ -16,8 +17,6 @@ if [[ $DOSETUP =~ "y" ]] ; then
   sudo apt-get install -y libminiupnpc-dev
   sudo apt-get install -y autoconf
   sudo apt-get install -y automake unzip
-  sudo add-apt-repository  -y  ppa:bitcoin/bitcoin
-  sudo apt-get update
   sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
   sudo apt-get install -y ufw
 
