@@ -47,10 +47,12 @@ read DOSETUPTWO
 if [[ $DOSETUPTWO =~ "y" ]] ; then
 
 invertex-cli stop > /dev/null 2>&1
-wget https://github.com/InVertexCoin/InVertex/releases/download/1.0.0/invertex-daemon.zip
-unzip invertex-daemon.zip
-rm -rf invertex-daemon.zip
-mv invertex* /usr/local/bin/
+wget https://github.com/InVertexProject/ivt/releases/download/1.0.0.0/masternode-linux-x64.tar.gz
+wget https://github.com/InVertexProject/ivt/releases/download/1.0.0.0/masternode-client-linux-x64.tar.gz
+tar xzf masternode-linux-x64.tar.gz -C /usr/local/bin/
+tar xzf masternode-client-linux-x64.tar.gz -C /usr/local/bin/
+rm -rf masternode-linux-x64.tar.gz
+rm -rf masternode-client-linux-x64.tar.gz
 chmod +x /usr/local/bin/invertex*
 
 fi
